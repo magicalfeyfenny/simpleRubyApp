@@ -1,25 +1,19 @@
 # simpleRubyApp
-A simple Rails REST framework demo
+A simple Rails REST framework demonstration that works through the Ruby on Rails tutorials
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Ruby version: 3.4.9 +PRISM
+Rails version: 8.1.2
 
-Things you may want to cover:
+Dependencies:
+  Typical Ruby and Rails dependencies from [the Ruby on Rails website
+](https://guides.rubyonrails.org/install_ruby_on_rails.html)
+  * build-essential
+  * rustc
+  * libssl-dev
+  * libyaml-dev
+  * zlib1g-dev
+  * libgmp-dev
+  * git
+  * Mise version manager
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-etc.
+Built on Ubuntu 24.04.4 LTS, though distro shouldn't matter as long as its some kind of Unix with those dependencies
