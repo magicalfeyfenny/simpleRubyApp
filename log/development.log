@@ -1,0 +1,43 @@
+Started GET "/" for 127.0.0.1 at 2026-03-23 14:51:03 +0000
+  [1m[35m (15.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='Store'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/magicalfeyfenny/.local/share/mise/installs/ruby/3.4.9/lib/ruby/gems/3.4.0/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/magicalfeyfenny/.local/share/mise/installs/ruby/3.4.9/lib/ruby/gems/3.4.0/gems/railties-8.1.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.0ms | GC: 0.0ms)
+Completed 200 OK in 75ms (Views: 14.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 35.6ms)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='Store'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (12.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-03-23 14:53:22.549978', '2026-03-23 14:53:22.549984') RETURNING "key" /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+Migrating to CreateProducts (20260323145200)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20260323145200') RETURNING "version" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Create (1.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('T-Shirt', '2026-03-23 14:55:17.069748', '2026-03-23 14:55:17.069748') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (15.7ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Create (1.1ms)[0m  [1m[32mINSERT INTO "products" ("name", "created_at", "updated_at") VALUES ('Pants', '2026-03-23 14:55:47.587079', '2026-03-23 14:55:47.587079') RETURNING "id" /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (1.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE (Pants) /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = 'Pants' /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ ORDER BY "products"."name" ASC LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Update (0.7ms)[0m  [1m[33mUPDATE "products" SET "name" = 'Shoes', "updated_at" = '2026-03-23 14:57:44.040041' WHERE "products"."id" = 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = 1 LIMIT 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Update (0.7ms)[0m  [1m[33mUPDATE "products" SET "name" = 'T-Shirt', "updated_at" = '2026-03-23 14:58:40.118053' WHERE "products"."id" = 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = 1 /*application='Store'*/[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='Store'*/[0m
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for pp */ LIMIT 11 /*application='Store'*/[0m
